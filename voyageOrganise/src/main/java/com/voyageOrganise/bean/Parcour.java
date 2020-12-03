@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Destination implements Serializable{
+public class Parcour implements Serializable{
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

@@ -19,7 +19,7 @@ public class Ville implements Serializable{
 	@ManyToOne
 	private Pays pays;
 	@OneToMany(mappedBy = "ville")
-    private List<Destination> destinations;
+    private List<Parcour> destinations;
 	
 	
 	

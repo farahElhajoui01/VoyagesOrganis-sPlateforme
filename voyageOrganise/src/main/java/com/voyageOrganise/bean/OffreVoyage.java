@@ -26,7 +26,7 @@ public class OffreVoyage implements Serializable{
 	@OneToMany(mappedBy = "offreVoyage")
     private List<Commentaire> commentaires;
 	@OneToMany(mappedBy = "offreVoyage")
-    private List<Destination> destinations;
+    private List<Parcour> destinations;
 
 	
 	
