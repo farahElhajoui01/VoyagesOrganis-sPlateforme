@@ -30,6 +30,34 @@ public class Ville implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+	public Pays getPays() {
+		return pays;
+	}
+
+	public void setPays(Pays pays) {
+		this.pays = pays;
+	}
+
+	
+
+	public Ville(String libelle, Pays pays) {
+		super();
+		this.libelle = libelle;
+		this.pays = pays;
+	}
+
+	public Ville() {
+		super();
+	}
 	
 	
 	

@@ -32,6 +32,62 @@ public class Agence implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public String getRaisonSociale() {
+		return raisonSociale;
+	}
+
+	public void setRaisonSociale(String raisonSociale) {
+		this.raisonSociale = raisonSociale;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Agence(String raisonSociale, String description, String photo, int rating,
+			Utilisateur utilisateur) {
+		super();
+		this.raisonSociale = raisonSociale;
+		this.description = description;
+		this.photo = photo;
+		this.rating = rating;
+		this.utilisateur = utilisateur;
+	}
+
+	public Agence() {
+		super();
+	}
 	
 	
 	
