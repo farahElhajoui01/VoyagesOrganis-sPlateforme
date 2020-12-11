@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.voyageOrganise.bean.Agence;
 import com.voyageOrganise.bean.Extra;
 import com.voyageOrganise.bean.OffreVoyage;
 import com.voyageOrganise.bean.TypeExtra;
@@ -35,28 +36,7 @@ public class OffreVoyageServiceImpl implements OffreVoyageService{
 	public List<OffreVoyage> findAll() {
 		return offreVoyageDao.findAll();
 	}
-
-
-	@Override
-	public List<OffreVoyage> FindByCriteria(Ville ville, Double prixMax, Double prixMin, Integer rating,
-			List<Extra> options,TypeVoyage type) {
-		
-	/*	String query="Select o from OffreVoyage o where 1=1";
-		
-		
-		
-		List<OffreVoyage> offres=new ArrayList<OffreVoyage>() ;
-          if(ville!=null && ville.getId()!=null)
-        	  query+=" and o.ville.id="+ville.getId();
-          else if( prixMax!=null )
-        	  query+=" and o.tarifBase <  "+prixMax;
-        	  offres=offreVoyageDao.findByChoixTarifDeBaseLessThan(prixMax);
-       
-		return entityManager.createQuery(query).getResultList();
-	*/
-		return null;
-	}
-
+	
 
 	@Override
 	public List<OffreVoyage> findByDestinationsVille(Long id) {
@@ -92,6 +72,24 @@ public class OffreVoyageServiceImpl implements OffreVoyageService{
 	@Override
 	public List<OffreVoyage> findByTypeId(Long id) {
 		return offreVoyageDao.findByTypeVoyageId(id);
+	}
+
+
+	@Override
+	public List<OffreVoyage> FindByCriteria(Long villeId, Long agenceId, Long typeId, Double prixMax) {
+      String query="Select o from OffreVoyage o where 1=1";
+		
+	         // if(villeId!=null )
+        	//  query+=" and o.ville.id="+villeId;
+          if(agenceId!=-1 )
+        	  query+=" and o.agence.id="+agenceId;
+           if(typeId!=-1 )
+        	  query+=" and o.typeVoyage.id="+typeId;
+           if( prixMax!=-1 )
+        	  query+=" and o.tarifBase <  "+prixMax;
+       
+          System.out.println("queeeeeeeey"+query);
+		return entityManager.createQuery(query).getResultList();
 	}
 
 

@@ -21,6 +21,8 @@ public class OffreVoyage implements Serializable{
 	private int rating;
 	private Date dateCreation;
 	private double tarifBase;
+	private String titre;
+	private String photo;
 	@OneToMany(mappedBy = "offreVoyage")
     private List<Choix> choix;
 	@ManyToOne
@@ -31,9 +33,19 @@ public class OffreVoyage implements Serializable{
     private List<Commentaire> commentaires;
 	@OneToMany(mappedBy = "offreVoyage")
     private List<Parcour> destinations;
+	@OneToMany(mappedBy = "offreVoyage")
+    private List<Extra> extras;
+	
+	
+	
+	public String getTitre() {
+		return titre;
+	}
 
-	
-	
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -66,13 +78,7 @@ public class OffreVoyage implements Serializable{
 		this.rating = rating;
 	}
 
-	public List<Choix> getChoix() {
-		return choix;
-	}
 
-	public void setChoix(List<Choix> choix) {
-		this.choix = choix;
-	}
 
 	public Agence getAgence() {
 		return agence;
@@ -90,21 +96,6 @@ public class OffreVoyage implements Serializable{
 		this.typeVoyage = typeVoyage;
 	}
 
-	public List<Commentaire> getCommentaires() {
-		return commentaires;
-	}
-
-	public void setCommentaires(List<Commentaire> commentaires) {
-		this.commentaires = commentaires;
-	}
-
-	public List<Parcour> getDestinations() {
-		return destinations;
-	}
-
-	public void setDestinations(List<Parcour> destinations) {
-		this.destinations = destinations;
-	}
 	
     
 	
@@ -129,21 +120,32 @@ public class OffreVoyage implements Serializable{
 	}
 
 	
+	public String getPhoto() {
+		return photo;
+	}
 
-	public OffreVoyage(String description, String programme, int rating, Date dateCreation, double tarifTotal,
-			List<Choix> choix, Agence agence, TypeVoyage typeVoyage, List<Commentaire> commentaires,
-			List<Parcour> destinations) {
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	
+	public OffreVoyage(String description, String programme, int rating, Date dateCreation, double tarifBase,
+			String titre, String photo, List<Choix> choix, Agence agence, TypeVoyage typeVoyage,
+			List<Commentaire> commentaires, List<Parcour> destinations, List<Extra> extras) {
 		super();
 		this.description = description;
 		this.programme = programme;
 		this.rating = rating;
 		this.dateCreation = dateCreation;
-		this.tarifBase = tarifTotal;
+		this.tarifBase = tarifBase;
+		this.titre = titre;
+		this.photo = photo;
 		this.choix = choix;
 		this.agence = agence;
 		this.typeVoyage = typeVoyage;
 		this.commentaires = commentaires;
 		this.destinations = destinations;
+		this.extras = extras;
 	}
 
 	@Override

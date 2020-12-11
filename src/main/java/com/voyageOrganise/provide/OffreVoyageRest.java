@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.voyageOrganise.bean.Agence;
 import com.voyageOrganise.bean.OffreVoyage;
+import com.voyageOrganise.bean.TypeVoyage;
 import com.voyageOrganise.bean.Ville;
 import com.voyageOrganise.dao.OffreVoyageDao;
 import com.voyageOrganise.facade.OffreVoyageService;
@@ -64,7 +67,11 @@ public class OffreVoyageRest {
 		return offreVoyageService.findByTypeId(id);
 	}
 	
+	@GetMapping("ville/{villeId}/agence/{agenceId}/type/{typeId}/prixMax/{prixMax}") 
+	public List<OffreVoyage> FindByCriteria(@PathVariable Long villeId,@PathVariable Long agenceId, @PathVariable Long typeId, @PathVariable Double prixMax) {
+		return offreVoyageService.FindByCriteria(villeId, agenceId, typeId, prixMax);
 
+	}
 
 	
 	

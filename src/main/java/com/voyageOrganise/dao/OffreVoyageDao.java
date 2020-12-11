@@ -24,6 +24,7 @@ public interface OffreVoyageDao extends JpaRepository<OffreVoyage, Long> {
     public List<OffreVoyage> findByTypeVoyageId(Long id);
     
 
+    
 
 
 

@@ -29,6 +29,23 @@ public class Parcour implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public OffreVoyage getOffreVoyage() {
+		return offreVoyage;
+	}
+
+	public void setOffreVoyage(OffreVoyage offreVoyage) {
+		this.offreVoyage = offreVoyage;
+	}
+
+	public Ville getVille() {
+		return ville;
+	}
+
+	public void setVille(Ville ville) {
+		this.ville = ville;
+	}
+	
 	
 	
 	
