@@ -1,4 +1,4 @@
-package com.voyageOrganise.impl;
+package com.voyageOrganise.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import com.voyageOrganise.bean.TypeExtra;
 import com.voyageOrganise.bean.TypeVoyage;
 import com.voyageOrganise.bean.Ville;
 import com.voyageOrganise.dao.OffreVoyageDao;
-import com.voyageOrganise.facade.OffreVoyageService;
+import com.voyageOrganise.service.facade.OffreVoyageService;
 
 
 @Service

@@ -1,4 +1,4 @@
-package com.voyageOrganise.facade;
+package com.voyageOrganise.service.facade;
 
 import java.util.List;
 import java.util.Optional;
