@@ -1,4 +1,4 @@
-package com.voyageOrganise.provide;
+package com.voyageOrganise.provide.facade;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +16,7 @@ import com.voyageOrganise.bean.OffreVoyage;
 import com.voyageOrganise.bean.TypeVoyage;
 import com.voyageOrganise.bean.Ville;
 import com.voyageOrganise.dao.OffreVoyageDao;
-import com.voyageOrganise.facade.OffreVoyageService;
+import com.voyageOrganise.service.facade.OffreVoyageService;
 
 
 @CrossOrigin(origins = "http://localhost:4200")

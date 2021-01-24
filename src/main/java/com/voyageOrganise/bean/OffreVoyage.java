@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class OffreVoyage implements Serializable{
 	@Id 
@@ -26,7 +29,7 @@ public class OffreVoyage implements Serializable{
 	@OneToMany(mappedBy = "offreVoyage")
     private List<Choix> choix;
 	@ManyToOne
-    private Agence agence;
+     private Agence agence;
 	@ManyToOne
     private TypeVoyage typeVoyage;
 	@OneToMany(mappedBy = "offreVoyage")
@@ -127,11 +130,45 @@ public class OffreVoyage implements Serializable{
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-
+ 
+		 
 	
+	public List<Extra> getExtras() {
+		return extras;
+	}
+
+	public void setExtras(List<Extra> extras) {
+		this.extras = extras;
+	}
+	
+
+	public List<Choix> getChoix() {
+		return choix;
+	}
+
+	public void setChoix(List<Choix> choix) {
+		this.choix = choix;
+	}
+
+	public List<Commentaire> getCommentaires() {
+		return commentaires;
+	}
+
+	public void setCommentaires(List<Commentaire> commentaires) {
+		this.commentaires = commentaires;
+	}
+
+	public List<Parcour> getDestinations() {
+		return destinations;
+	}
+
+	public void setDestinations(List<Parcour> destinations) {
+		this.destinations = destinations;
+	}
+
 	public OffreVoyage(String description, String programme, int rating, Date dateCreation, double tarifBase,
-			String titre, String photo, List<Choix> choix, Agence agence, TypeVoyage typeVoyage,
-			List<Commentaire> commentaires, List<Parcour> destinations, List<Extra> extras) {
+			String titre, String photo
+	) {
 		super();
 		this.description = description;
 		this.programme = programme;
@@ -140,14 +177,11 @@ public class OffreVoyage implements Serializable{
 		this.tarifBase = tarifBase;
 		this.titre = titre;
 		this.photo = photo;
-		this.choix = choix;
-		this.agence = agence;
-		this.typeVoyage = typeVoyage;
-		this.commentaires = commentaires;
-		this.destinations = destinations;
-		this.extras = extras;
+		
+	
 	}
 
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Agence implements Serializable{
 	@Id 
@@ -85,6 +87,7 @@ public class Agence implements Serializable{
 		this.utilisateur = utilisateur;
 	}
 
+	
 	public Agence() {
 		super();
 	}

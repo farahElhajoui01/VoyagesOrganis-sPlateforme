@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Pays implements Serializable{
 	@Id 
@@ -43,6 +45,14 @@ public class Pays implements Serializable{
 
 	public Pays() {
 		super();
+	}
+
+	public List<Ville> getVilles() {
+		return villes;
+	}
+
+	public void setVilles(List<Ville> villes) {
+		this.villes = villes;
 	}
 	
 	

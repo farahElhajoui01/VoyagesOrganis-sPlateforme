@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Extra implements Serializable{
 	@Id 
@@ -73,6 +75,7 @@ public class Extra implements Serializable{
 		this.typeExtra = typeExtra;
 	}
 
+	
 	public Extra(String libelle, double tarif, Choix choix, OffreVoyage offreVoyage, TypeExtra typeExtra) {
 		super();
 		this.libelle = libelle;

@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Ville implements Serializable{
 	@Id 
@@ -48,6 +51,17 @@ public class Ville implements Serializable{
 	}
 
 	
+	public Ville() {
+		super();
+	}
+
+	public List<Parcour> getDestinations() {
+		return destinations;
+	}
+
+	public void setDestinations(List<Parcour> destinations) {
+		this.destinations = destinations;
+	}
 
 	public Ville(String libelle, Pays pays) {
 		super();
@@ -55,8 +69,9 @@ public class Ville implements Serializable{
 		this.pays = pays;
 	}
 
-	public Ville() {
-		super();
+	@Override
+	public String toString() {
+		return "Ville [id=" + id + ", libelle=" + libelle + ", pays=" + pays + ", destinations=" + destinations + "]";
 	}
 	
 	

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Parcour implements Serializable{
 	@Id 
@@ -45,6 +47,23 @@ public class Parcour implements Serializable{
 	public void setVille(Ville ville) {
 		this.ville = ville;
 	}
+
+	
+	public Parcour(OffreVoyage offreVoyage, Ville ville) {
+		super();
+		this.offreVoyage = offreVoyage;
+		this.ville = ville;
+	}
+
+	public Parcour() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Parcour [id=" + id + ", offreVoyage=" + offreVoyage + ", ville=" + ville + "]";
+	}
+	
 	
 	
 	

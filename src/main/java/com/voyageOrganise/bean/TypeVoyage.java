@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class TypeVoyage implements Serializable{
 	@Id 
@@ -16,7 +19,7 @@ public class TypeVoyage implements Serializable{
 	private Long id;
 	private String libelle;
 	@OneToMany(mappedBy = "typeVoyage")
-    private List<OffreVoyage> offreVoyages;
+	private List<OffreVoyage> offreVoyages;
 
 	
 	
@@ -37,6 +40,15 @@ public class TypeVoyage implements Serializable{
 	}
 
 
+
+
+	public List<OffreVoyage> getOffreVoyages() {
+		return offreVoyages;
+	}
+
+	public void setOffreVoyages(List<OffreVoyage> offreVoyages) {
+		this.offreVoyages = offreVoyages;
+	}
 
 	public TypeVoyage(String libelle) {
 		super();
