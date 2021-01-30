@@ -1,6 +1,7 @@
 package com.voyageOrganise.provide.converter;
 
 import java.text.ParseException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,6 +10,7 @@ import com.voyageOrganise.bean.OffreVoyage;
 import com.voyageOrganise.provide.vo.OffreVoyageVo;
 import com.voyageOrganise.service.util.ListUtil;
 import com.voyageOrganise.service.util.StringUtil;
+import com.voyageOrganise.provide.converter.AgenceConverter;
 
 @Component
 public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoyageVo>{
@@ -20,8 +22,7 @@ public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoy
 	 private boolean commentaires;
 	 private boolean destinations;
 	 private boolean extras;
-	 @Autowired
-	    private AgenceConverter agenceConverter;
+	
 	 @Autowired
 	    private ChoixConverter choixConverter;
 	 @Autowired
@@ -32,6 +33,8 @@ public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoy
 	    private ExtrasConverter extrasConverter;
 	 @Autowired
 	    private TypeVoyageConverter typeVoyageConverter;
+	 @Autowired
+	    private AgenceConverter agenceConverter;
 
 	@Override
 	public OffreVoyage toBean(OffreVoyageVo vo) {
@@ -83,7 +86,7 @@ public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoy
 
 	        return offreVoyage;
 	}
-
+	
 	@Override
 	public OffreVoyageVo toVo(OffreVoyage offreVoyage) {
 		 OffreVoyageVo offreVoyageVo= new OffreVoyageVo();
@@ -170,6 +173,8 @@ public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoy
 	public void setExtras(boolean extras) {
 		this.extras = extras;
 	}
+
+	
 
 	
 	

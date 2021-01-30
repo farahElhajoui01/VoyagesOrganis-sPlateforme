@@ -1,12 +1,10 @@
 package com.voyageOrganise.provide.converter;
 
-import javax.print.attribute.standard.Destination;
+import org.springframework.stereotype.Component;
 
-import com.voyageOrganise.bean.Agence;
 import com.voyageOrganise.bean.Parcour;
-import com.voyageOrganise.provide.vo.AgenceVo;
 import com.voyageOrganise.provide.vo.ParcourVo;
-
+@Component
 public class DestinationsConverter extends AbstractConverter<Parcour,ParcourVo>{
 
 	@Override

@@ -27,9 +27,9 @@ public class OffreVoyageServiceImpl implements OffreVoyageService{
 	private EntityManager entityManager;
 		
  
-	public Optional<OffreVoyage> findById(Long id) {
+	/*public OffreVoyage findById(Long id) {
 		return offreVoyageDao.findById(id);
-	}
+	}*/
 
 
 	@Override

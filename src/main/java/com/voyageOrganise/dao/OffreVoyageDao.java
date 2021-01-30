@@ -14,7 +14,7 @@ import com.voyageOrganise.bean.Ville;
 public interface OffreVoyageDao extends JpaRepository<OffreVoyage, Long> {
 	
 
-	public Optional<OffreVoyage> findById(Long id);
+	//public OffreVoyage findById(Long id);
 	public List<OffreVoyage> findByDestinationsVilleId(Long id);
 	
 	public List<OffreVoyage> findByChoixTarifDeBaseGreaterThan(double prixMin);

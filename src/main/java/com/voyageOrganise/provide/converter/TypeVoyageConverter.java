@@ -1,10 +1,10 @@
 package com.voyageOrganise.provide.converter;
 
-import com.voyageOrganise.bean.Agence;
-import com.voyageOrganise.bean.TypeVoyage;
-import com.voyageOrganise.provide.vo.AgenceVo;
-import com.voyageOrganise.provide.vo.TypeVoyageVo;
+import org.springframework.stereotype.Component;
 
+import com.voyageOrganise.bean.TypeVoyage;
+import com.voyageOrganise.provide.vo.TypeVoyageVo;
+@Component
 public class TypeVoyageConverter extends AbstractConverter<TypeVoyage,TypeVoyageVo>{
 
 	@Override
