@@ -23,7 +23,7 @@ public class OffreVoyage implements Serializable{
 	private String programme;
 	private int rating;
 	private Date dateCreation;
-	private double tarifBase;
+	private Double tarifBase;
 	private String titre;
 	private String photo;
 	@OneToMany(mappedBy = "offreVoyage")
@@ -102,11 +102,11 @@ public class OffreVoyage implements Serializable{
 	
     
 	
-	public double getTarifBase() {
+	public Double getTarifBase() {
 		return tarifBase;
 	}
 
-	public void setTarifBase(double tarifTotal) {
+	public void setTarifBase(Double tarifTotal) {
 		this.tarifBase = tarifTotal;
 	}
 

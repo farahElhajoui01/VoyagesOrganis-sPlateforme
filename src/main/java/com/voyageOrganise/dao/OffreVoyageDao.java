@@ -22,6 +22,7 @@ public interface OffreVoyageDao extends JpaRepository<OffreVoyage, Long> {
 	public List<OffreVoyage> findByChoixTarifDeBaseBetween(double prixMin,double prixMax);
 	public List<OffreVoyage> findAllByOrderByDateCreationDesc();
     public List<OffreVoyage> findByTypeVoyageId(Long id);
+    public List<OffreVoyage> findByAgenceId(Long id);
     
 
     
