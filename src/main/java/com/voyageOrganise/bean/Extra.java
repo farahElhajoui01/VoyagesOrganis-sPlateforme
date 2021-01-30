@@ -59,9 +59,7 @@ public class Extra implements Serializable{
 		this.choix = choix;
 	}
 
-	public OffreVoyage getOffreVoyage() {
-		return offreVoyage;
-	}
+	
 
 	public void setOffreVoyage(OffreVoyage offreVoyage) {
 		this.offreVoyage = offreVoyage;

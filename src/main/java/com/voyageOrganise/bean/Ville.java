@@ -55,9 +55,7 @@ public class Ville implements Serializable{
 		super();
 	}
 
-	public List<Parcour> getDestinations() {
-		return destinations;
-	}
+	
 
 	public void setDestinations(List<Parcour> destinations) {
 		this.destinations = destinations;

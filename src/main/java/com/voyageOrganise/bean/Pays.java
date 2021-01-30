@@ -47,10 +47,7 @@ public class Pays implements Serializable{
 		super();
 	}
 
-	public List<Ville> getVilles() {
-		return villes;
-	}
-
+	
 	public void setVilles(List<Ville> villes) {
 		this.villes = villes;
 	}

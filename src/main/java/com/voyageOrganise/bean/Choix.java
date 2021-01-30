@@ -60,9 +60,7 @@ public class Choix implements Serializable{
 		this.tarifDeBase = tarifDeBase;
 	}
 
-	public OffreVoyage getOffreVoyage() {
-		return offreVoyage;
-	}
+	
 
 	public void setOffreVoyage(OffreVoyage offreVoyage) {
 		this.offreVoyage = offreVoyage;

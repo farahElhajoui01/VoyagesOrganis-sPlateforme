@@ -49,9 +49,7 @@ public class Commentaire implements Serializable{
 		this.voyageur = voyageur;
 	}
 
-	public OffreVoyage getOffreVoyage() {
-		return offreVoyage;
-	}
+	
 
 	public void setOffreVoyage(OffreVoyage offreVoyage) {
 		this.offreVoyage = offreVoyage;

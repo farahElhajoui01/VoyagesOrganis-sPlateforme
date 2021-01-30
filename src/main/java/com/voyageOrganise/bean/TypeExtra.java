@@ -46,9 +46,7 @@ public class TypeExtra implements Serializable{
 		this.tarif = tarif;
 	}
 
-	public List<Extra> getExtras() {
-		return extras;
-	}
+	
 
 	public void setExtras(List<Extra> extras) {
 		this.extras = extras;
