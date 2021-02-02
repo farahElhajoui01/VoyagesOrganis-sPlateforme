@@ -26,6 +26,46 @@ public class Reservation implements Serializable{
 	
 	
 	
+	public double getTotalAPayer() {
+		return TotalAPayer;
+	}
+
+	public void setTotalAPayer(double totalAPayer) {
+		TotalAPayer = totalAPayer;
+	}
+
+	public Date getDateRes() {
+		return dateRes;
+	}
+
+	public void setDateRes(Date dateRes) {
+		this.dateRes = dateRes;
+	}
+
+	public boolean isAnnule() {
+		return annule;
+	}
+
+	public void setAnnule(boolean annule) {
+		this.annule = annule;
+	}
+
+	public Voyageur getVoyageur() {
+		return voyageur;
+	}
+
+	public void setVoyageur(Voyageur voyageur) {
+		this.voyageur = voyageur;
+	}
+
+	public Choix getChoix() {
+		return choix;
+	}
+
+	public void setChoix(Choix choix) {
+		this.choix = choix;
+	}
+
 	public Long getId() {
 		return id;
 	}

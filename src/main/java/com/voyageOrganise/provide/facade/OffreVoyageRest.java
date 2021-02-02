@@ -120,9 +120,24 @@ public class OffreVoyageRest {
 		return offreVoyageService.findByTypeId(id);
 	}
 	
-	@GetMapping("ville/{villeId}/agence/{agenceId}/type/{typeId}/prixMax/{prixMax}") 
-	public List<OffreVoyage> FindByCriteria(@PathVariable Long villeId,@PathVariable Long agenceId, @PathVariable Long typeId, @PathVariable Double prixMax) {
-		return offreVoyageService.FindByCriteria(villeId, agenceId, typeId, prixMax);
+	@GetMapping("titre/{titre}/prixMin/{prixMin}/prixMax/{prixMax}")
+	@ApiOperation("find OffreVoyage by IBy Criteria")
+	public List<OffreVoyageVo> FindByCriteria(@PathVariable String titre,@PathVariable Double prixMin,@PathVariable Double prixMax) {
+		List<OffreVoyage> offres= offreVoyageService.FindByCriteria(titre,prixMin,prixMax);
+	     commentairesConverter.setOffreVoyage(false);
+
+		agenceConverter.setOffreVoyage(false); 
+		 typeVoyageConverter.setOffreVoyage(false);
+		 destinationsConverter.setOffreVoyage(false);
+		 extrasConverter.setTypeExtra(false);
+		 typeVoyageConverter.setOffreVoyage(false);
+		 offreVoyageConverter.setAgence(true);
+		 offreVoyageConverter.setDestinations(true);
+		 offreVoyageConverter.setExtras(true);
+		 offreVoyageConverter.setTypeVoyage(true);
+		 destinationsConverter.setVille(true);
+		 System.out.println("3iw"+offres);
+		 return offreVoyageConverter.toVo(offres);
 
 	}
 

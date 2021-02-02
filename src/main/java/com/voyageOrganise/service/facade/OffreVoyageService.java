@@ -26,7 +26,7 @@ public interface OffreVoyageService {
 	 public List<OffreVoyage> findAllByOrderByDateCreationDesc();
 	 public List<OffreVoyage> findByTypeId(Long id);
 	 
-		public List<OffreVoyage> FindByCriteria(Long villeId, Long agenceId, Long typeId, Double prixMax) ;
+	 public List<OffreVoyage> FindByCriteria( String titre ,Double prixMin, Double prixMax) ;
 		public int deleteByTitre(String titre);
 	
 

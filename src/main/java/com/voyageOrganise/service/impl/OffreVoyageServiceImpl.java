@@ -79,21 +79,22 @@ public class OffreVoyageServiceImpl implements OffreVoyageService{
 
 
 	@Override
-	public List<OffreVoyage> FindByCriteria(Long villeId, Long agenceId, Long typeId, Double prixMax) {
+	public List<OffreVoyage> FindByCriteria( String titre ,Double prixMin, Double prixMax) {
       String query="Select o from OffreVoyage o where 1=1";
 		
-	         // if(villeId!=null )
-        	//  query+=" and o.ville.id="+villeId;
-          if(agenceId!=-1 )
-        	  query+=" and o.agence.id="+agenceId;
-           if(typeId!=-1 )
-        	  query+=" and o.typeVoyage.id="+typeId;
+      String queryVille="Select o from OffreVoyage o  where 1=1";
+      if( titre!=null )
+    	  query+=" and o.titre = '"+titre+"'";
+      
+      if( prixMin!=-1 )
+    	  query+=" and o.tarifBase >  "+prixMin;
            if( prixMax!=-1 )
         	  query+=" and o.tarifBase <  "+prixMax;
        
           System.out.println("queeeeeeeey"+query);
 		return entityManager.createQuery(query).getResultList();
 	}
+
 
 
 	
