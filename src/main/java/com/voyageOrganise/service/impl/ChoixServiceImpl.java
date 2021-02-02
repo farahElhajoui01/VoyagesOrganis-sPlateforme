@@ -1,11 +1,13 @@
 package com.voyageOrganise.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
+
 
 import com.voyageOrganise.bean.Choix;
 import com.voyageOrganise.dao.ChoixDao;
@@ -28,7 +30,11 @@ public class ChoixServiceImpl implements ChoixService{
 		return choixDao.findMinTarif( id);
 	}
 
-	
+	@Override
+	public List<Choix> findByOffreVoyageTitre(String titre) {
+		return choixDao.findByOffreVoyageTitre(titre);
+	}
+
 
 
 

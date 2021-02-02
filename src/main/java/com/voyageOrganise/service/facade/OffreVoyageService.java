@@ -16,7 +16,7 @@ import com.voyageOrganise.bean.Ville;
 
 
 public interface OffreVoyageService {
-	// public OffreVoyage findById(Long id);
+	public OffreVoyage findByTitre(String titre);
 	 public List<OffreVoyage> findAll();
 	 public List<OffreVoyage> findByDestinationsVille(Long id);
 	 public List<OffreVoyage> findByChoixTarifDeBaseGreaterThan(double prixMin);
@@ -27,7 +27,7 @@ public interface OffreVoyageService {
 	 public List<OffreVoyage> findByTypeId(Long id);
 	 
 		public List<OffreVoyage> FindByCriteria(Long villeId, Long agenceId, Long typeId, Double prixMax) ;
-
+		public int deleteByTitre(String titre);
 	
 
 }

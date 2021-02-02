@@ -1,21 +1,16 @@
 package com.voyageOrganise.bean;
 
-import java.io.Serializable;
+
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-public class OffreVoyage implements Serializable{
+public class OffreVoyage {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -165,6 +160,7 @@ public class OffreVoyage implements Serializable{
 	public void setDestinations(List<Parcour> destinations) {
 		this.destinations = destinations;
 	}
+	
 
 	public OffreVoyage(String description, String programme, int rating, Date dateCreation, double tarifBase,
 			String titre, String photo

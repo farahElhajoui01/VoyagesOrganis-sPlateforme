@@ -26,11 +26,14 @@ public class OffreVoyageServiceImpl implements OffreVoyageService{
 	@Autowired
 	private EntityManager entityManager;
 		
- 
-	/*public OffreVoyage findById(Long id) {
-		return offreVoyageDao.findById(id);
-	}*/
-
+   @Override
+	public OffreVoyage findByTitre(String titre) {
+		return offreVoyageDao.findByTitre(titre);
+	}
+	@Override
+	public int deleteByTitre(String titre) {
+		return offreVoyageDao.deleteByTitre(titre);
+	}
 
 	@Override
 	public List<OffreVoyage> findAll() {

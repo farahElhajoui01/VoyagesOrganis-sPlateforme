@@ -6,10 +6,18 @@ import java.util.List;
 
 public class VilleVo {
 	
-	
+	private String id;
 	private String libelle;
 	private PaysVo paysVo;
     private List<ParcourVo> destinationsVo;
+    
+    
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getLibelle() {
 		return libelle;
 	}

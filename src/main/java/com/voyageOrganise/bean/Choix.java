@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 @Entity
 public class Choix implements Serializable{
 	@Id 
@@ -60,7 +58,9 @@ public class Choix implements Serializable{
 		this.tarifDeBase = tarifDeBase;
 	}
 
-	
+	public OffreVoyage getOffreVoyage() {
+		return offreVoyage;
+	}
 
 	public void setOffreVoyage(OffreVoyage offreVoyage) {
 		this.offreVoyage = offreVoyage;
@@ -73,6 +73,7 @@ public class Choix implements Serializable{
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
+	
 
 	public Choix(Date dateDebut, Date dateFin, double tarifDeBase, OffreVoyage offreVoyage) {
 		super();

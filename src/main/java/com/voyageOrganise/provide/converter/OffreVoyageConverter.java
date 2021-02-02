@@ -39,6 +39,9 @@ public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoy
 	@Override
 	public OffreVoyage toBean(OffreVoyageVo vo) {
 		OffreVoyage offreVoyage= new OffreVoyage();
+		  if(StringUtil.isNotEmpty(vo.getId())){
+	            offreVoyage.setId(StringUtil.toLong(vo.getId()));
+	        }
 	        if(StringUtil.isNotEmpty(vo.getDescription())){
 	        	offreVoyage.setDescription(vo.getDescription());
 	        }
@@ -90,6 +93,9 @@ public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoy
 	@Override
 	public OffreVoyageVo toVo(OffreVoyage offreVoyage) {
 		 OffreVoyageVo offreVoyageVo= new OffreVoyageVo();
+		 if(offreVoyage.getId()!=null){
+	        	offreVoyageVo.setId(StringUtil.toString(offreVoyage.getId()));
+	        }
 	        if(offreVoyage.getDescription()!=null){
 	        	offreVoyageVo.setDescription(offreVoyage.getDescription());
 	        }
@@ -172,6 +178,62 @@ public class OffreVoyageConverter extends AbstractConverter<OffreVoyage,OffreVoy
 
 	public void setExtras(boolean extras) {
 		this.extras = extras;
+	}
+
+	public boolean isTypeVoyage() {
+		return typeVoyage;
+	}
+
+	public void setTypeVoyage(boolean typeVoyage) {
+		this.typeVoyage = typeVoyage;
+	}
+
+	public ChoixConverter getChoixConverter() {
+		return choixConverter;
+	}
+
+	public void setChoixConverter(ChoixConverter choixConverter) {
+		this.choixConverter = choixConverter;
+	}
+
+	public CommentairesConverter getCommentairesConverter() {
+		return commentairesConverter;
+	}
+
+	public void setCommentairesConverter(CommentairesConverter commentairesConverter) {
+		this.commentairesConverter = commentairesConverter;
+	}
+
+	public DestinationsConverter getDestinationsConverter() {
+		return destinationsConverter;
+	}
+
+	public void setDestinationsConverter(DestinationsConverter destinationsConverter) {
+		this.destinationsConverter = destinationsConverter;
+	}
+
+	public ExtrasConverter getExtrasConverter() {
+		return extrasConverter;
+	}
+
+	public void setExtrasConverter(ExtrasConverter extrasConverter) {
+		this.extrasConverter = extrasConverter;
+	}
+
+	public TypeVoyageConverter getTypeVoyageConverter() {
+		return typeVoyageConverter;
+	}
+
+	public void setTypeVoyageConverter(TypeVoyageConverter typeVoyageConverter) {
+		this.typeVoyageConverter = typeVoyageConverter;
+	}
+
+	public AgenceConverter getAgenceConverter() {
+		return agenceConverter;
+	}
+
+	public void setAgenceConverter(AgenceConverter agenceConverter) {
+		this.agenceConverter = agenceConverter;
 	}
 
 	

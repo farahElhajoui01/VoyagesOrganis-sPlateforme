@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,15 +48,36 @@ public class OffreVoyageRest {
  @Autowired
     private TypeVoyageConverter typeVoyageConverter;
 	
-	/*@GetMapping("/id/{id}") 
-	@ApiOperation("find offre by id")
-	public OffreVoyageVo findById(@PathVariable Long id) {
-		OffreVoyage offreVoyage = offreVoyageService.findById(id);
-        offreVoyageConverter.setAgence(true);
+	@GetMapping("/titre/{titre}") 
+	@ApiOperation("find offre by titre")
+	public OffreVoyageVo findByTitre(@PathVariable String titre) {
+		OffreVoyage offreVoyage = offreVoyageService.findByTitre(titre);
+		commentairesConverter.setOffreVoyage(false);
+		 agenceConverter.setOffreVoyage(false); 
+		 typeVoyageConverter.setOffreVoyage(false);
+		 destinationsConverter.setOffreVoyage(false);
+		 extrasConverter.setTypeExtra(false);
+		 choixConverter.setOffreVoyage(false);
+		 choixConverter.setReservations(false);
+		 choixConverter.setExtras(true);
+
+		 typeVoyageConverter.setOffreVoyage(false);
+		 offreVoyageConverter.setAgence(true);
+		 offreVoyageConverter.setDestinations(true);
+		 offreVoyageConverter.setChoix(true);
+
+		 offreVoyageConverter.setCommentaires(true);
+		 offreVoyageConverter.setDestinations(true);
+		 offreVoyageConverter.setExtras(true);
+		 offreVoyageConverter.setTypeVoyage(true);
+		 destinationsConverter.setVille(true);
 		return offreVoyageConverter.toVo(offreVoyage);
-	}*/
+	}
 	  
-	
+	@DeleteMapping("/titre/{titre}")
+	public int deleteByRef(@PathVariable String titre) {
+		return offreVoyageService.deleteByTitre(titre);
+	}
 	@GetMapping("/ville/{id}") 
 	public List<OffreVoyage> findByDestinationsVill(@PathVariable Long id) {
 		return offreVoyageService.findByDestinationsVille(id);
@@ -77,9 +99,15 @@ public class OffreVoyageRest {
 	}
 	
 	@GetMapping("/") 
-	public List<OffreVoyage> findAll() {
+	public List<OffreVoyageVo> findAll() {
+		List<OffreVoyage> offreVoyages = offreVoyageService.findAll();
+		  offreVoyageConverter.setAgence(true);
+		  offreVoyageConverter.setTypeVoyage(true);
+		  offreVoyageConverter.setChoix(true);
+		  offreVoyageConverter.setDestinations(true);
+		  offreVoyageConverter.setCommentaires(true);
+		return offreVoyageConverter.toVo(offreVoyages);
 		
-		return offreVoyageService.findAll();
 	}
 	
 	@GetMapping("ordered/") 

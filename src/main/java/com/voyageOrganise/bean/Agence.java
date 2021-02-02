@@ -77,6 +77,14 @@ public class Agence implements Serializable{
 		this.utilisateur = utilisateur;
 	}
 
+	public List<OffreVoyage> getOffreVoyages() {
+		return offreVoyages;
+	}
+
+	public void setOffreVoyages(List<OffreVoyage> offreVoyages) {
+		this.offreVoyages = offreVoyages;
+	}
+
 	public Agence(String raisonSociale, String description, String photo, int rating,
 			Utilisateur utilisateur) {
 		super();

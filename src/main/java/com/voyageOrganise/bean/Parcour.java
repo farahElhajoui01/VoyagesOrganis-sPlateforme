@@ -24,6 +24,10 @@ public class Parcour implements Serializable{
 	
 	
 	
+	public OffreVoyage getOffreVoyage() {
+		return offreVoyage;
+	}
+
 	public Long getId() {
 		return id;
 	}

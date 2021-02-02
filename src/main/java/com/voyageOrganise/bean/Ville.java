@@ -57,6 +57,10 @@ public class Ville implements Serializable{
 
 	
 
+	public List<Parcour> getDestinations() {
+		return destinations;
+	}
+
 	public void setDestinations(List<Parcour> destinations) {
 		this.destinations = destinations;
 	}

@@ -1,20 +1,16 @@
 package com.voyageOrganise.dao;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
+import org.springframework.stereotype.Repository;
 import com.voyageOrganise.bean.OffreVoyage;
-import com.voyageOrganise.bean.Ville;
 
-
+@Repository
 public interface OffreVoyageDao extends JpaRepository<OffreVoyage, Long> {
 	
 
-	//public OffreVoyage findById(Long id);
+	public OffreVoyage findByTitre(String titre);
 	public List<OffreVoyage> findByDestinationsVilleId(Long id);
 	
 	public List<OffreVoyage> findByChoixTarifDeBaseGreaterThan(double prixMin);
@@ -23,6 +19,8 @@ public interface OffreVoyageDao extends JpaRepository<OffreVoyage, Long> {
 	public List<OffreVoyage> findAllByOrderByDateCreationDesc();
     public List<OffreVoyage> findByTypeVoyageId(Long id);
     public List<OffreVoyage> findByAgenceId(Long id);
+    
+	public int deleteByTitre(String titre);
     
 
     

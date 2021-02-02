@@ -37,6 +37,11 @@ public class Pays implements Serializable{
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+	
+
+	public List<Ville> getVilles() {
+		return villes;
+	}
 
 	public Pays(String libelle) {
 		super();

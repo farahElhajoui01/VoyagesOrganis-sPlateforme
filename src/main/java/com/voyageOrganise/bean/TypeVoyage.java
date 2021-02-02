@@ -44,6 +44,10 @@ public class TypeVoyage implements Serializable{
 
 	
 
+	public List<OffreVoyage> getOffreVoyages() {
+		return offreVoyages;
+	}
+
 	public void setOffreVoyages(List<OffreVoyage> offreVoyages) {
 		this.offreVoyages = offreVoyages;
 	}

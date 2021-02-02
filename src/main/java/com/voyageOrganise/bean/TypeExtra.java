@@ -48,6 +48,10 @@ public class TypeExtra implements Serializable{
 
 	
 
+	public List<Extra> getExtras() {
+		return extras;
+	}
+
 	public void setExtras(List<Extra> extras) {
 		this.extras = extras;
 	}
